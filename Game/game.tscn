@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmy37se1eftx5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5njku"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmm4g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_om1af"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqsvn"]
+bg_color = Color(0.454902, 0.658824, 0.494118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyrtb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8s81e"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5njku")
+
+[node name="TextContainers" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="Rows" type="VBoxContainer" parent="Background/TextContainers"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="TitlePanel" type="MarginContainer" parent="Background/TextContainers/Rows"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/TextContainers/Rows/TitlePanel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vmm4g")
+
+[node name="BodyPanel" type="PanelContainer" parent="Background/TextContainers/Rows"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_om1af")
+
+[node name="PictureContainers" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 850
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/PictureContainers"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/PictureContainers/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/PictureContainers/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pqsvn")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/PictureContainers/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/PictureContainers/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="InputPanel" type="MarginContainer" parent="Background"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 560
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/InputPanel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vyrtb")
+
+[node name="LineEdit" type="LineEdit" parent="Background/InputPanel"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8s81e")
